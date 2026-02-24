@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Profissional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<div class="wrapper">
+
+    <div class="card" id="loginCard">
+        <h1>Bem-vindo</h1>
+        <p class="subtitle">Entre para continuar</p>
+
+        <form>
+            <div class="field">
+                <input type="text" required>
+                <label>Usuário</label>
+            </div>
+
+            <div class="field">
+                <input type="password" required>
+                <label>Senha</label>
+            </div>
+
+            <button type="submit">Entrar</button>
+
+            <div class="links">
+                <a href="#" onclick="showRegister()">Criar conta</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="card hidden" id="registerCard">
+        <h1>Criar Conta</h1>
+        <p class="subtitle">Preencha os dados</p>
+
+        <form id="registerForm">
+
+            <div class="field">
+                <input type="text" required>
+                <label>Novo usuário</label>
+            </div>
+
+            <div class="field">
+                <input type="password" id="newPassword" required oninput="verificarForcaSenha()">
+                <label>Nova senha</label>
+            </div>
+
+            <div class="password-strength">
+                <div id="strengthBar"></div>
+            </div>
+
+            <small id="strengthText" class="password-info">
+                Digite uma senha forte
+            </small>
+
+            <button type="submit">Registrar</button>
+
+            <div class="links">
+                <a href="#" onclick="showLogin()">Voltar</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
